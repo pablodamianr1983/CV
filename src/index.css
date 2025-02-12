@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  background: linear-gradient(160deg, #0a0e1a, #000000);
+  color: #e0f2fe;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondo animado */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #0a0e1a, #000000), 
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.1) 10px,
+      rgba(255, 255, 255, 0.1) 20px
+    );
+  z-index: -1;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #ffe082; /* Amarillo más pastel */
+  margin: 0;
+}
+
+.header h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.profile-picture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  z-index: -1;
+  animation: pulseLights 2s ease-in-out infinite;
+}
+
+@keyframes pulseLights {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.08); /* Transparencia sutil */
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde */
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.02);
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1); /* Transparencia sutil */
+  z-index: -1;
+}
+
+.section-title {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #ffe082; /* Amarillo más pastel */
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.section-content {
+  line-height: 1.6;
+  color: #c7e3ff;
+}
+
+.experience-item,
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.experience-item .date,
+.education-item .date {
+  font-weight: bold;
+  color: #ffe082; /* Amarillo más pastel */
+}
+
+.languages-progress {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.languages-progress label {
+  margin-right: 1rem;
+  color: #ffe082; /* Amarillo más pastel */
+}
+
+.languages-progress .progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.languages-progress .progress-fill {
+  height: 100%;
+  background: #ffe082; /* Amarillo más pastel */
+  border-radius: 4px;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
