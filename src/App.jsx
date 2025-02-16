@@ -144,7 +144,7 @@ function App() {
         {openSection === "educacion" || openSection === "all" ? (
           <div className="section-content">
             <div className="education-item">
-              <span className="date">Tecnicatura Universitaria en Desarrollo de Software (Cursando)</span>
+              <span className="date">Tecnicatura Universitaria en Desarrollo de Software</span>
               <p>IUPATECO, Salta.</p>
             </div>
             <div className="education-item">
