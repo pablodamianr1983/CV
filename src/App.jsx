@@ -189,6 +189,18 @@ function App() {
                 <div className="progress-fill" style={{ width: `${progressValues.css}%` }}></div>
               </div>
             </div>
+            <div className="languages-progress">
+              <label>Node.js</label>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${progressValues.nodejs}%` }}></div>
+              </div>
+            </div>
+            <div className="languages-progress">
+              <label>Python</label>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${progressValues.python}%` }}></div>
+              </div>
+            </div>
           </div>
         ) : null}
       </div>
